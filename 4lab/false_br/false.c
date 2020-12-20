@@ -1,20 +1,17 @@
 #include <stddef.h>
 
+int get2() { return 2; }
 
-int foos(int x) {
-	int result = 0;
-	if(x) {
-		for(int i = 0; i < 100; i++){
-			result += 20;
-		}
-	} else {
-		for(int j = 0; j < 50; j++){
-			result += 10;
-		}
-	}
-    return result;
-}
-
-void call_it(){
-	foos(1);
+int foo() {
+  int i = 0;
+  if (get2() == 2) {
+    for (int j = 0; j < 10; ++j) {
+      i = get2();
+    }
+  } else {
+    for (int j = 0; j < 40; ++j) {
+      i = 2 * get2();
+    }
+  }
+  return i;
 }
